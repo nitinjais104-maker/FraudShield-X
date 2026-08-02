@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FraudShield X | AI Fraud Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+
+<!-- ================= HEADER ================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🛡️
+        </div>
+
+        <div>
+            <h1>FraudShield <span>X</span></h1>
+            <p>AI FRAUD INTELLIGENCE SYSTEM</p>
+        </div>
+
+    </div>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        SYSTEM ONLINE
+        <small>API • 127.0.0.1:8000</small>
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div>
+
+            <div class="eyebrow">
+                MACHINE LEARNING SECURITY
+            </div>
+
+            <h2>
+                Detect fraud<br>
+                <span>before it happens.</span>
+            </h2>
+
+            <p class="hero-description">
+                FraudShield X analyzes transaction behavior using a
+                Random Forest machine-learning model to identify
+                suspicious financial activity in real time.
+            </p>
+
+        </div>
+
+
+        <div class="engine-card">
+
+            <div class="engine-ring">
+
+                <div class="engine-core">
+                    AI
+                </div>
+
+            </div>
+
+            <p>DETECTION ENGINE</p>
+
+            <strong>RANDOM FOREST</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= METRICS ================= -->
+
+    <section class="metrics">
+
+        <div class="metric-card">
+
+            <div class="metric-label">
+                MODEL
+            </div>
+
+            <div class="metric-value" data-model>
+                RF
+            </div>
+
+            <div class="metric-description">
+                Random Forest Classifier
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <div class="metric-label">
+                PR-AUC
+            </div>
+
+            <div class="metric-value" data-pr-auc>
+                0.854
+            </div>
+
+            <div class="metric-description">
+                Precision-Recall performance
+            </div>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <div class="metric-label">
+                THRESHOLD
+            </div>
+
+            <div class="metric-value" data-threshold>
+                0.70
+            </div>
+
+            <div class="metric-description">
+                Fraud decision boundary
+            </div>
+
+        </div>
+
+
+        <div class="metric-card danger">
+
+            <div class="metric-label">
+                FEATURES
+            </div>
+
+            <div class="metric-value" data-features>
+                38
+            </div>
+
+            <div class="metric-description">
+                Transaction signals analyzed
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- ================= ANALYSIS ================= -->
+
+<section class="analysis-layout">
+
+    <!-- TRANSACTION INPUT -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <div class="panel-tag">
+                    TRANSACTION ANALYSIS
+                </div>
+
+                <h3>Analyze a transaction</h3>
+
+                <p>
+                    Enter transaction details for AI-powered fraud analysis.
+                </p>
+
+            </div>
+
+            <div class="secure-badge">
+                🔒 SECURE
+            </div>
+
+        </div>
+
+
+        <form id="fraudForm">
+
+            <!-- BASIC TRANSACTION DATA -->
+
+            <div class="input-row">
+
+                <div class="input-group">
+
+                    <label>
+                        Transaction Amount
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Enter amount"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>
+                        Transaction Time
+                    </label>
+
+                    <input
+                        type="number"
+                        id="time"
+                        placeholder="Enter transaction time"
+                        min="0"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- TRANSACTION SIGNALS -->
+             <div class="demo-transactions">
+
+    <div class="demo-label">
+        QUICK DEMO TRANSACTIONS
+    </div>
+
+    <div class="demo-buttons">
+
+        <button type="button" class="demo-btn genuine" id="demoGenuine">
+            🟢 Genuine
+        </button>
+
+        <button type="button" class="demo-btn review" id="demoReview">
+            🟠 Review
+        </button>
+
+        <button type="button" class="demo-btn fraud" id="demoFraud">
+            🔴 High-Risk Fraud
+        </button>
+
+    </div>
+
+    <p class="demo-help">
+        Load a real dataset example to demonstrate the AI detection engine.
+    </p>
+
+</div>
+
+            <div class="input-group">
+
+                <div class="label-row">
+
+                    <label>
+                        Transaction Signals
+                    </label>
+
+                    <span>
+                        V1 – V28
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="signals"
+                    placeholder="Enter V1–V28 values separated by commas"
+                    required
+                ></textarea>
+
+
+                <div class="input-help">
+                    28 behavioral transaction signals are used by
+                    the machine-learning model.
+                </div>
+
+            </div>
+
+
+            <!-- ANALYZE BUTTON -->
+
+            <button
+                type="submit"
+                class="analyze-button"
+                id="analyzeBtn"
+            >
+
+                <span>
+                    Analyze Transaction
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- RISK RESULT -->
+
+    <div class="panel result-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <div class="panel-tag">
+                    RISK ANALYSIS
+                </div>
+
+                <h3>AI prediction result</h3>
+
+                <p>
+                    Real-time fraud probability assessment.
+                </p>
+
+            </div>
+
+            <div class="live-badge">
+                ● LIVE
+            </div>
+
+        </div>
+
+
+        <div
+            class="result-content"
+            id="resultContent"
+        >
+
+            <div class="result-placeholder">
+
+                <div class="result-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Ready to Analyze
+                </h3>
+
+                <p>
+                    Submit a transaction to receive an
+                    AI-powered fraud risk assessment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PIPELINE ================= -->
+
+
+    <section class="pipeline-section">
+
+        <div class="section-heading">
+
+            <div class="section-tag">
+                DETECTION PIPELINE
+            </div>
+
+            <h3>
+                How FraudShield X analyzes transactions
+            </h3>
+
+        </div>
+
+
+        <div class="pipeline">
+
+
+            <div class="pipeline-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <strong>
+                    Transaction
+                </strong>
+
+                <span>
+                    Raw transaction data
+                </span>
+
+            </div>
+
+
+            <div class="pipeline-line"></div>
+
+
+            <div class="pipeline-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <strong>
+                    Feature Engineering
+                </strong>
+
+                <span>
+                    Behavioral signals
+                </span>
+
+            </div>
+
+
+            <div class="pipeline-line"></div>
+
+
+            <div class="pipeline-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <strong>
+                    ML Model
+                </strong>
+
+                <span>
+                    Random Forest
+                </span>
+
+            </div>
+
+
+            <div class="pipeline-line"></div>
+
+
+            <div class="pipeline-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <strong>
+                    Risk Score
+                </strong>
+
+                <span>
+                    Fraud probability
+                </span>
+
+            </div>
+
+
+            <div class="pipeline-line"></div>
+
+
+            <div class="pipeline-step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <strong>
+                    Decision
+                </strong>
+
+                <span>
+                    Genuine / Fraud
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MODEL INFO ================= -->
+
+    <section class="model-section">
+
+        <div class="model-card">
+
+            <div>
+
+                <div class="section-tag">
+                    MODEL INTELLIGENCE
+                </div>
+
+                <h3>
+                    Random Forest Detection Engine
+                </h3>
+
+                <p>
+                    FraudShield X uses an ensemble of decision trees
+                    to analyze multiple transaction signals and
+                    calculate the probability that a transaction
+                    is fraudulent.
+                </p>
+
+                <p>
+                    The system uses a configurable detection threshold
+                    to convert the model probability into a final
+                    risk decision.
+                </p>
+
+            </div>
+
+
+            <div class="model-stats">
+
+                <div>
+
+                    <span>
+                        MODEL TYPE
+                    </span>
+
+                    <strong data-model>
+                        Random Forest
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        INPUT SIGNALS
+                    </span>
+
+                    <strong data-features>
+                        38
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PR-AUC
+                    </span>
+
+                    <strong data-pr-auc>
+                        0.854
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        THRESHOLD
+                    </span>
+
+                    <strong data-threshold>
+                        0.70
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        <strong>FraudShield X</strong>
+        • AI-Based Credit Card Fraud Detection
+    </div>
+
+    <div>
+        Built with Python • FastAPI • Scikit-learn
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -3,30 +3,38 @@ __pycache__/
 *.py[cod]
 *.pyo
 
-# Virtual Environment
+# Virtual environment
 .venv/
-
-# Environment variables
-.env
+venv/
+env/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Data
-data/raw/
-data/processed/
-
-# Models
-*.pkl
-*.joblib
-models/
-
-# Logs
-*.log
+# IDE
+.vscode/
+.idea/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# IDE
-.vscode/
+# Environment / secrets
+.env
+.env.*
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+# Dataset
+data/raw/creditcard.csv
+
+# Local database
+database/*.db
+
+# Backup files
+*_backup.py
+*_v2_backup.py
