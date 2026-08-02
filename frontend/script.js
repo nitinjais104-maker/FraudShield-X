@@ -6,8 +6,8 @@ const amountInput = document.getElementById("amount");
 const timeInput = document.getElementById("time");
 const signalsInput = document.getElementById("signals");
 
-const API_URL = "http://127.0.0.1:8000/predict";
-const MODEL_INFO_URL = "http://127.0.0.1:8000/model-info";
+const API_URL = "https://fraudshield-x.onrender.com/predict";
+const MODEL_INFO_URL = "https://fraudshield-x.onrender.com/model-info";
 
 
 /* =========================================================
